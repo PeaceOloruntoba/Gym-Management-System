@@ -1,7 +1,14 @@
+// GYM MANAGEMENT SYSTEM BY PEACE OLORUNTOBA C.E.O. PEASCAINC
+// You can contact me on gmail @ profprincepeace@gmail.com or peascainc@gmail.com
+// You can also call me or whatsapp me on +2348166846226
+
 {
   "name": "lightbox2",
   "version": "2.11.3",
-  "author": "Lokesh Dhakar <lokesh.dhakar@gmail.com>",
+  "authors": [
+    "Lokesh Dhakar <lokesh.dhakar@gmail.com>",
+    "Peace Oloruntoba <profprincepeace@gmail.com>"
+  ],
   "description": "The original Lightbox script. Uses jQuery.",
   "keywords": [
     "lightbox",

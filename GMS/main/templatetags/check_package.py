@@ -1,10 +1,13 @@
+# GYM MANAGEMENT SYSTEM BY PEACE OLORUNTOBA C.E.O. PEASCAINC
+# You can contact me on gmail @ profprincepeace@gmail.com or peascainc@gmail.com
+# You can also call me or whatsapp me on +2348166846226
+
 from django import template
 from main.models import Subscription,SubPlan
 from django.contrib.auth.models import User
 from datetime import date
 
 register=template.Library()
-
 @register.simple_tag
 def check_user_package(user_id,plan_id):
 	user=User.objects.get(id=user_id)

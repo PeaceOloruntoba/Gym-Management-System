@@ -1,3 +1,7 @@
+// GYM MANAGEMENT SYSTEM BY PEACE OLORUNTOBA C.E.O. PEASCAINC
+// You can contact me on gmail @ profprincepeace@gmail.com or peascainc@gmail.com
+// You can also call me or whatsapp me on +2348166846226
+
 /*!
  * Lightbox v2.11.3
  * by Lokesh Dhakar
@@ -17,16 +21,19 @@
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define(['jquery'], factory);
-    } else if (typeof exports === 'object') {
+    }
+    else if (typeof exports === 'object') {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
         module.exports = factory(require('jquery'));
-    } else {
+    }
+    else {
         // Browser globals (root is window)
         root.lightbox = factory(root.jQuery);
     }
-}(this, function ($) {
+}
+(this, function ($) {
 
   function Lightbox(options) {
     this.album = [];
@@ -158,7 +165,8 @@
     this.$lightbox.find('.lb-prev').on('click', function() {
       if (self.currentImageIndex === 0) {
         self.changeImage(self.album.length - 1);
-      } else {
+      }
+      else {
         self.changeImage(self.currentImageIndex - 1);
       }
       return false;
@@ -167,7 +175,8 @@
     this.$lightbox.find('.lb-next').on('click', function() {
       if (self.currentImageIndex === self.album.length - 1) {
         self.changeImage(0);
-      } else {
+      }
+      else {
         self.changeImage(self.currentImageIndex + 1);
       }
       return false;
@@ -237,7 +246,8 @@
           imageNumber = i;
         }
       }
-    } else {
+    }
+    else {
       if ($link.attr('rel') === 'lightbox') {
         // If image is not part of a set
         addToAlbum($link);
@@ -313,11 +323,7 @@
       maxImageWidth  = windowWidth - self.containerPadding.left - self.containerPadding.right - self.imageBorderWidth.left - self.imageBorderWidth.right - 20;
       maxImageHeight = windowHeight - self.containerPadding.top - self.containerPadding.bottom - self.imageBorderWidth.top - self.imageBorderWidth.bottom - self.options.positionFromTop - 70;
 
-      /*
-      Since many SVGs have small intrinsic dimensions, but they support scaling
-      up without quality loss because of their vector format, max out their
-      size.
-      */
+      // Increase .SVG files size as they usually have very small dimensions
       if (filetype === 'svg') {
         $image.width(maxImageWidth);
         $image.height(maxImageHeight);
@@ -334,7 +340,8 @@
           maxImageHeight = self.options.maxHeight;
         }
 
-      } else {
+      }
+      else {
         maxImageWidth = self.options.maxWidth || preloader.width || maxImageWidth;
         maxImageHeight = self.options.maxHeight || preloader.height || maxImageHeight;
       }
@@ -347,7 +354,8 @@
           imageHeight = parseInt(preloader.height / (preloader.width / imageWidth), 10);
           $image.width(imageWidth);
           $image.height(imageHeight);
-        } else {
+        }
+        else {
           imageHeight = maxImageHeight;
           imageWidth = parseInt(preloader.width / (preloader.height / imageHeight), 10);
           $image.width(imageWidth);
@@ -408,7 +416,8 @@
       }, this.options.resizeDuration, 'swing', function() {
         postResize();
       });
-    } else {
+    }
+    else {
       postResize();
     }
   };
@@ -433,7 +442,8 @@
     try {
       document.createEvent('TouchEvent');
       alwaysShowNav = (this.options.alwaysShowNavOnTouchDevices) ? true : false;
-    } catch (e) {}
+    }
+    catch (e) {}
 
     this.$lightbox.find('.lb-nav').show();
 
@@ -465,13 +475,14 @@
     var self = this;
 
     // Enable anchor clicks in the injected caption html.
-    // Thanks Nate Wright for the fix. @https://github.com/NateWr
     if (typeof this.album[this.currentImageIndex].title !== 'undefined' &&
       this.album[this.currentImageIndex].title !== '') {
       var $caption = this.$lightbox.find('.lb-caption');
       if (this.options.sanitizeTitle) {
         $caption.text(this.album[this.currentImageIndex].title);
-      } else {
+      }
+      else
+      {
         $caption.html(this.album[this.currentImageIndex].title);
       }
       $caption.fadeIn('fast');
@@ -480,7 +491,8 @@
     if (this.album.length > 1 && this.options.showImageNumberLabel) {
       var labelText = this.imageCountLabel(this.currentImageIndex + 1, this.album.length);
       this.$lightbox.find('.lb-number').text(labelText).fadeIn('fast');
-    } else {
+    }
+    else {
       this.$lightbox.find('.lb-number').hide();
     }
 
@@ -523,16 +535,20 @@
       // Prevent bubbling so as to not affect other components on the page.
       event.stopPropagation();
       this.end();
-    } else if (keycode === KEYCODE_LEFTARROW) {
+    }
+    else if (keycode === KEYCODE_LEFTARROW) {
       if (this.currentImageIndex !== 0) {
         this.changeImage(this.currentImageIndex - 1);
-      } else if (this.options.wrapAround && this.album.length > 1) {
+      }
+      else if (this.options.wrapAround && this.album.length > 1) {
         this.changeImage(this.album.length - 1);
       }
-    } else if (keycode === KEYCODE_RIGHTARROW) {
+    }
+    else if (keycode === KEYCODE_RIGHTARROW) {
       if (this.currentImageIndex !== this.album.length - 1) {
         this.changeImage(this.currentImageIndex + 1);
-      } else if (this.options.wrapAround && this.album.length > 1) {
+      }
+      else if (this.options.wrapAround && this.album.length > 1) {
         this.changeImage(0);
       }
     }

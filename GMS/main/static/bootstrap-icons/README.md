@@ -1,3 +1,7 @@
+<!-- GYM MANAGEMENT SYSTEM BY PEACE OLORUNTOBA C.E.O. PEASCAINC
+     You can contact me on gmail @ profprincepeace@gmail.com or peascainc@gmail.com
+     You can also call me or whatsapp me on +2348166846226 -->
+
 <p align="center">
   <a href="https://v5.getbootstrap.com/">
     <img src="https://v5.getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap logo" width="200" height="165">
